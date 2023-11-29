@@ -1,0 +1,31 @@
+package br.com.hapvida.forms;
+
+import java.util.Scanner;
+
+import br.com.hapvida.beans.Paciente;
+
+public class PacienteForm {
+	
+	public Paciente exibirFormulario() {
+		Scanner scanner = new Scanner(System.in);
+		
+		Paciente paciente = new Paciente();
+		
+		System.out.println("=====PACIENTE====");
+		
+		System.out.println("Nome do Paciente: ");
+		String nomePaciente = scanner.nextLine();
+		
+		System.out.println("Sobrenome do Paciente: ");
+		String sobrenomePaciente = scanner.nextLine();
+		
+		System.out.println("CPF do Paciente: ");
+		String cpfPaciente = scanner.nextLine();
+		
+		System.out.println("Sexo do Paciente: ");
+		String sexoPaciente = scanner.nextLine();
+		
+		
+		
+	}
+}

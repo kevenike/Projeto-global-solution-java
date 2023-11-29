@@ -1,0 +1,13 @@
+package br.com.hapvida.main;
+
+import br.com.hapvida.forms.MedicacaoForm;
+
+public class ExecutarSistema {
+
+	public static void main(String[] args) {
+		MedicacaoForm medicacao = new MedicacaoForm();
+		medicacao.exibirFormulario();
+		
+	}
+
+}

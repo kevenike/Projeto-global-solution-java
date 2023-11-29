@@ -6,7 +6,7 @@ public class Paciente {
 	private String nomePaciente;
 	private String sobrenomePaciente;
 	private String cpfPaciente;
-	private String SexoPaciente;
+	private String sexoPaciente;
 	
 	
 	public int getIdPaciente() {
@@ -19,13 +19,13 @@ public class Paciente {
 		return nomePaciente;
 	}
 	public void setNomePaciente(String nomePaciente) {
-		this.nomePaciente = nomePaciente;
+		this.nomePaciente = nomePaciente.toUpperCase();
 	}
 	public String getSobrenomePaciente() {
 		return sobrenomePaciente;
 	}
 	public void setSobrenomePaciente(String sobrenomePaciente) {
-		this.sobrenomePaciente = sobrenomePaciente;
+		this.sobrenomePaciente = sobrenomePaciente.toUpperCase();
 	}
 	public String getCpfPaciente() {
 		return cpfPaciente;
@@ -34,10 +34,15 @@ public class Paciente {
 		this.cpfPaciente = cpfPaciente;
 	}
 	public String getSexoPaciente() {
-		return SexoPaciente;
+		return sexoPaciente;
 	}
 	public void setSexoPaciente(String sexoPaciente) {
-		SexoPaciente = sexoPaciente;
+		 this.sexoPaciente = sexoPaciente.toUpperCase();
+	}
+	
+	public String toString() {
+		return "\nNome Do Paciente: " + nomePaciente + "\nSobrenome Do Paciente: " + sobrenomePaciente + "\nCPF Do Paciente: " + 
+			   cpfPaciente + "\nSexo Do Paciente: " + sexoPaciente;
 	}
 	
 	

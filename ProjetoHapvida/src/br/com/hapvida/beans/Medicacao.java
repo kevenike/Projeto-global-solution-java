@@ -3,20 +3,13 @@ package br.com.hapvida.beans;
 
 public class Medicacao {
 	
-	private int idMedicacao;
 	private String laboratorioMedicacao;
 	private String nomeMedicacao;
-	private int dosagemMedicacao;
+	private double quantidadeMedicacao;
 	private double valorMedicacao;
 	private String categoriaMedicacao;
 	
 	
-	public int getIdMedicacao() {
-		return idMedicacao;
-	}
-	public void setIdMedicacao(int idMedicacao) {
-		this.idMedicacao = idMedicacao;
-	}
 	public String getLaboratorioMedicacao() {
 		return laboratorioMedicacao;
 	}
@@ -29,11 +22,11 @@ public class Medicacao {
 	public void setNomeMedicacao(String nomeMedicacao) {
 		this.nomeMedicacao = nomeMedicacao;
 	}
-	public int getDosagemMedicacao() {
-		return dosagemMedicacao;
+	public double getQuantidadeMedicacao() {
+		return quantidadeMedicacao;
 	}
-	public void setDosagemMedicacao(int dosagemMedicacao) {
-		this.dosagemMedicacao = dosagemMedicacao;
+	public void setQuantidadeMedicacao(double quantidadeMedicacao) {
+		this.quantidadeMedicacao = quantidadeMedicacao;
 	}
 	public double getValorMedicacao() {
 		return valorMedicacao;
@@ -47,6 +40,11 @@ public class Medicacao {
 	}
 	public void setCategoriaMedicacao(String categoriaMedicacao) {
 		this.categoriaMedicacao = categoriaMedicacao;
+	}
+	
+	public String toString() {
+		return "\nLaboratorio: " + laboratorioMedicacao + "\nNome da Medicação: " + nomeMedicacao + "\nDosagem: " + quantidadeMedicacao +
+				"\nValor da Medicacao: " + valorMedicacao + "\nCategoria da Medicação: " + categoriaMedicacao ;
 	}
 	
 	

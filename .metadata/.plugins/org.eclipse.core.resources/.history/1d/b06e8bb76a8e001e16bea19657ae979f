@@ -1,0 +1,53 @@
+package br.com.hapvida.beans;
+
+
+public class Medicacao {
+	
+	private int idMedicacao;
+	private String laboratorioMedicacao;
+	private String nomeMedicacao;
+	private int dosagemMedicacao;
+	private double valorMedicacao;
+	private String categoriaMedicacao;
+	
+	
+	public int getIdMedicacao() {
+		return idMedicacao;
+	}
+	public void setIdMedicacao(int idMedicacao) {
+		this.idMedicacao = idMedicacao;
+	}
+	public String getLaboratorioMedicacao() {
+		return laboratorioMedicacao;
+	}
+	public void setLaboratorioMedicacao(String laboratorioMedicacao) {
+		this.laboratorioMedicacao = laboratorioMedicacao;
+	}
+	public String getNomeMedicacao() {
+		return nomeMedicacao;
+	}
+	public void setNomeMedicacao(String nomeMedicacao) {
+		this.nomeMedicacao = nomeMedicacao;
+	}
+	public int getDosagemMedicacao() {
+		return dosagemMedicacao;
+	}
+	public void setDosagemMedicacao(int dosagemMedicacao) {
+		this.dosagemMedicacao = dosagemMedicacao;
+	}
+	public double getValorMedicacao() {
+		return valorMedicacao;
+	}
+	public void setValorMedicacao(double valorMedicacao) {
+		this.valorMedicacao = valorMedicacao;
+	}
+
+	public String getCategoriaMedicacao() {
+		return categoriaMedicacao;
+	}
+	public void setCategoriaMedicacao(String categoriaMedicacao) {
+		this.categoriaMedicacao = categoriaMedicacao;
+	}
+	
+	
+}

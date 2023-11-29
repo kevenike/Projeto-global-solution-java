@@ -1,0 +1,28 @@
+package br.com.hapvida.forms;
+
+import java.util.Scanner;
+
+import br.com.hapvida.beans.Farmacia;
+
+public class FarmaciaForm {
+	
+	public Farmacia exibirFormulario() {
+		Scanner scanner = new Scanner(System.in);
+		Farmacia farmacia = new Farmacia();
+		
+		System.out.println("======Formulario=Farmacia=====");
+        System.out.print("Informe o ID do funcionário: ");
+        farmacia.setIdFuncionario(scanner.nextInt());
+
+        // Você pode adicionar mais informações do funcionário aqui...
+
+        // Exemplo de uso dos métodos
+        farmacia.registrarEntradaFuncionario();
+        farmacia.registrarSaidaFuncionario();
+
+        scanner.close();
+		
+		return farmacia;
+		
+	}
+}

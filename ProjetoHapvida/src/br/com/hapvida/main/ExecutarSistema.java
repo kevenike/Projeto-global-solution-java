@@ -1,12 +1,13 @@
 package br.com.hapvida.main;
 
-import br.com.hapvida.forms.ControleEstoqueForm;
+import br.com.hapvida.forms.PacienteForm;
 
 public class ExecutarSistema {
 
 	public static void main(String[] args) {
-		ControleEstoqueForm controla = new ControleEstoqueForm ();
-		controla.exibirFormulario();
+		PacienteForm medicacao = new PacienteForm();
+		medicacao.exibirFormulario();
+		
 	}
 
 }

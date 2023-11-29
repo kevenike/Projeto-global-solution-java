@@ -1,0 +1,16 @@
+package br.com.hapvida.forms;
+
+import java.util.Scanner;
+
+import br.com.hapvida.beans.Paciente;
+
+public class PacienteForm {
+	
+	public Paciente exibirFormulario() {
+		Scanner scanner = new Scanner(System.in);
+		
+		Paciente paciente = new Paciente();
+		
+		
+	}
+}

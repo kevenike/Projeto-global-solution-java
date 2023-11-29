@@ -1,0 +1,11 @@
+package br.com.hapvida.main;
+
+import br.com.hapvida.forms.FarmaciaForm;
+
+public class ExecutarSistema {
+
+	public static void main(String[] args) {
+		FarmaciaForm farmacia = new FramaciaForm(); 
+	}
+
+}
