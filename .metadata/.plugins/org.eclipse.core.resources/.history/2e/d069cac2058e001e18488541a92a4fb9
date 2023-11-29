@@ -1,0 +1,13 @@
+package br.com.hapvida.beans;
+
+import java.time.LocalDate;
+
+public class Estoque {
+	
+	private int idEstoque;
+	private String fornecedorEstoque;
+	private String loteEstoque;
+	private String controleMedicacaoEstoque;
+	private LocalDate dataEntradaEstoque;
+	private LocalDate dataSaidaEstoque;
+}

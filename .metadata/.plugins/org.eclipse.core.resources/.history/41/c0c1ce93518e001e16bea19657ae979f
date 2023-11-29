@@ -1,0 +1,94 @@
+package br.com.hapvida.beans;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Estoque {
+	
+	private int idEstoque;
+	private String fornecedorEstoque;
+	private String loteEstoque;
+	private String controleMedicacaoEstoque;
+	private LocalDate dataEntradaEstoque;
+	private LocalDate dataSaidaEstoque;
+	
+	public Estoque() {
+		super();
+	}
+	
+	
+	
+	public Estoque(int idEstoque, String fornecedorEstoque, String loteEstoque, String controleMedicacaoEstoque,
+			LocalDate dataEntradaEstoque, LocalDate dataSaidaEstoque) {
+		super();
+		this.idEstoque = idEstoque;
+		this.fornecedorEstoque = fornecedorEstoque;
+		this.loteEstoque = loteEstoque;
+		this.controleMedicacaoEstoque = controleMedicacaoEstoque;
+		this.dataEntradaEstoque = dataEntradaEstoque;
+		this.dataSaidaEstoque = dataSaidaEstoque;
+	}
+
+
+
+	public int getIdEstoque() {
+		return idEstoque;
+	}
+	public void setIdEstoque(int idEstoque) {
+		this.idEstoque = idEstoque;
+	}
+	public String getFornecedorEstoque() {
+		return fornecedorEstoque;
+	}
+	public void setFornecedorEstoque(String fornecedorEstoque) {
+		this.fornecedorEstoque = fornecedorEstoque;
+	}
+	public String getLoteEstoque() {
+		return loteEstoque;
+	}
+	public void setLoteEstoque(String loteEstoque) {
+		this.loteEstoque = loteEstoque;
+	}
+	public String getControleMedicacaoEstoque() {
+		return controleMedicacaoEstoque;
+	}
+	public void setControleMedicacaoEstoque(String controleMedicacaoEstoque) {
+		this.controleMedicacaoEstoque = controleMedicacaoEstoque;
+	}
+	public LocalDate getDataEntradaEstoque() {
+		return dataEntradaEstoque;
+	}
+	public void setDataEntradaEstoque(LocalDate dataEntradaEstoque) {
+		this.dataEntradaEstoque = dataEntradaEstoque;
+	}
+	public LocalDate getDataSaidaEstoque() {
+		return dataSaidaEstoque;
+	}
+	public void setDataSaidaEstoque(LocalDate dataSaidaEstoque) {
+		this.dataSaidaEstoque = dataSaidaEstoque;
+	}
+	
+	public boolean medicamentoNoEstoque() {
+        return dataSaidaEstoque == null;
+    }
+
+    public void registrarSaida(LocalDate dataSaida) {
+        if (medicamentoNoEstoque()) {
+            setDataSaidaEstoque(dataSaida);
+            System.out.println("Medicamento retirado do estoque. Data de Saída: " + dataSaida.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        } else {
+            System.out.println("Erro: Medicamento já retirado do estoque anteriormente.");
+        }
+    }
+    
+    public void exibirInformacoes() {
+        System.out.println("ID do Estoque: " + idEstoque);
+        System.out.println("Fornecedor: " + fornecedorEstoque);
+        System.out.println("Lote: " + loteEstoque);
+        System.out.println("Controle de Medicamento: " + controleMedicacaoEstoque);
+        System.out.println("Data de Entrada: " + dataEntradaEstoque.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        System.out.println("Data de Saída: " + (dataSaidaEstoque != null ? dataSaidaEstoque.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) : "N/A"));
+    }
+	
+}
+  

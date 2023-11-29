@@ -1,0 +1,10 @@
+package br.com.hapvida.main;
+
+public class ExecutarSistema {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

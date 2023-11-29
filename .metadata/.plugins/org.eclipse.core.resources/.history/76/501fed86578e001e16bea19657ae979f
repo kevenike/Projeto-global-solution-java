@@ -1,0 +1,56 @@
+package br.com.hapvida.forms;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import br.com.hapvida.beans.Estoque;
+
+public class ControleEstoqueForm {
+
+	public Estoque exibirFormulario() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Bem-vindo ao Sistema de Controle de Estoque!");
+
+	       Estoque estoque = new Estoque();
+
+	        System.out.print("Digite o ID do Estoque: ");
+	        estoque.setIdEstoque(scanner.nextInt());
+	        scanner.nextLine(); // Consumir a quebra de linha
+
+	        System.out.print("Digite o fornecedor do estoque: ");
+	        estoque.setFornecedorEstoque(scanner.nextLine());
+
+	        System.out.print("Digite o lote do estoque: ");
+	        estoque.setLoteEstoque(scanner.nextLine());
+
+	        System.out.print("Digite o controle de medicamento do estoque: ");
+	        estoque.setControleMedicacaoEstoque(scanner.nextLine());
+
+	        System.out.print("Digite a data de entrada do estoque (dd/MM/yyyy): ");
+	        String dataEntradaInput = scanner.nextLine();
+	        estoque.setDataEntradaEstoque(LocalDate.parse(dataEntradaInput, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+	        System.out.print("Digite a quantidade de entrada do estoque: ");
+	        int quantidadeEntrada = scanner.nextInt();
+
+	        System.out.print("Digite a data de saída do estoque (dd/MM/yyyy, deixe em branco se ainda estiver no estoque): ");
+	        scanner.nextLine(); // Consumir a quebra de linha
+	        String dataSaidaInput = scanner.nextLine();
+	        if (!dataSaidaInput.isEmpty()) {
+	            LocalDate dataSaidaEstoque = LocalDate.parse(dataSaidaInput, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	            
+	            System.out.print("Digite a quantidade de saída do estoque: ");
+	            int quantidadeSaida = scanner.nextInt();
+	            
+	            estoque.registrarSaida(dataSaidaEstoque, quantidadeSaida);
+	        }
+
+	        estoque.exibirInformacoes();
+
+	        scanner.close();
+
+		return estoque;
+	}
+}

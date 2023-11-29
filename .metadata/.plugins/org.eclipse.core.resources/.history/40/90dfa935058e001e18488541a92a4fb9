@@ -1,0 +1,14 @@
+package br.com.hapvida.beans;
+
+import java.time.LocalDate;
+
+public class Farmacia {
+	
+	private int idFarmacia;
+	private int idFuncionario;
+	private LocalDate horarioDoFuncionario;
+	private String enderecoFarmacia;
+	private Estoque estoque;
+	private Medicacao medicacao;
+	private Paciente paciente;
+}

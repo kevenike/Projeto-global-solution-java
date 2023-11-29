@@ -1,0 +1,10 @@
+package br.com.hapvida.beans;
+
+public class Paciente {
+	
+	private int idPaciente;
+	private String nomePaciente;
+	private String sobrenomePaciente;
+	private String cpfPaciente;
+	private String SexoPaciente;
+}

@@ -1,0 +1,10 @@
+package br.com.hapvida.forms;
+
+import br.com.hapvida.beans.Estoque;
+
+public class ControleEstoque {
+	
+	public Estoque exibirFormulario() {
+		
+	}
+}
