@@ -28,7 +28,7 @@ public class MedicacaoForm {
 		System.out.println("Categoria da Medicação: ");
 		String categoriaMedicacao = scanner.nextLine();
 		
-		medicacao.setNomeMedicacao(laboratorioMedicacao);
+		medicacao.setLaboratorioMedicacao(laboratorioMedicacao);
 		medicacao.setNomeMedicacao(nomeMedicacao);
 		medicacao.setQuantidadeMedicacao(quantidadeMedicacao);
 		medicacao.setValorMedicacao(valorMedicacao);

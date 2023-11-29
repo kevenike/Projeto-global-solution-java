@@ -38,7 +38,8 @@ public class FarmaciaForm {
 				farmacia.registrarSaidaFuncionario();
 				break;
 			case 0:
-				System.out.println("Saindo do sistema.");
+				DisplayMenu display = new DisplayMenu();
+				display.exibir();
 				break;
 			default:
 				System.out.println("Opção inválida. Tente novamente.");
