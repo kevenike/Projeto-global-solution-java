@@ -1,0 +1,9 @@
+package br.com.hapvida.beans;
+
+import java.time.LocalDate;
+
+public class ConvenioMedico {
+	
+	private int numeroCarteira;
+	private LocalDate dataVaencimento;
+}

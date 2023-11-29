@@ -1,0 +1,94 @@
+package br.com.hapvida.forms;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+import br.com.hapvida.beans.Cartao;
+import br.com.hapvida.beans.ConvenioMedico;
+import br.com.hapvida.beans.Pagamento;
+import br.com.hapvida.beans.Pix;
+
+public class PagamentoFormulario {
+
+    private static Scanner scanner = new Scanner(System.in);
+
+    public Pagamento exibirFormulario() {
+        return criarPagamento();
+    }
+
+    private Pagamento criarPagamento() {
+        System.out.println("Escolha o tipo de pagamento (1 - Pix, 2 - ConvenioMedico, 3 - Cartao): ");
+        int opcaoPagamento = scanner.nextInt();
+
+        switch (opcaoPagamento) {
+            case 1:
+                return criarPix();
+            case 2:
+                return criarConvenioMedico();
+            case 3:
+                return criarCartao();
+            default:
+                throw new IllegalArgumentException("Opção de pagamento inválida");
+        }
+    }
+
+    private Pix criarPix() {
+        System.out.println("Digite o ID do pagamento: ");
+        int idPagamento = scanner.nextInt();
+        System.out.println("Digite a Chave Pix: ");
+        String chavePix = scanner.next();
+
+        return new Pix(idPagamento, LocalDate.now(), 0.0, 0, chavePix);
+    }
+
+    private ConvenioMedico criarConvenioMedico() {
+        System.out.println("Digite o ID do pagamento: ");
+        int idPagamento = scanner.nextInt();
+        System.out.println("Digite o Número da Carteira do Convênio Médico: ");
+        int numeroCarteira = scanner.nextInt();
+        System.out.println("Digite a Data de Vencimento do Convênio Médico (no formato dd/MM/yyyy): ");
+        String dataVencimentoStr = scanner.next();
+        LocalDate dataVencimento = LocalDate.parse(dataVencimentoStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        return new ConvenioMedico(idPagamento, LocalDate.now(), 0.0, 0, numeroCarteira, dataVencimento);
+    }
+
+    private Cartao criarCartao() {
+        System.out.println("Digite o ID do pagamento: ");
+        int idPagamento = scanner.nextInt();
+        System.out.println("Digite o Nome do Cartão: ");
+        String nomeCartao = scanner.next();
+        System.out.println("Digite o Número do Cartão: ");
+        int numeroCartao = scanner.nextInt();
+        System.out.println("Digite o CVV do Cartão: ");
+        int cvv = scanner.nextInt();
+        System.out.println("Digite a Validade do Cartão (no formato MM/yyyy): ");
+        String validadeStr = scanner.next();
+        LocalDate validade = LocalDate.parse("01/" + validadeStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        return new Cartao(idPagamento, LocalDate.now(), 0.0, 0, nomeCartao, numeroCartao, cvv, validade);
+    }
+
+    private void exibirDetalhesPagamento(Pagamento pagamento) {
+        System.out.println("Detalhes do pagamento:");
+        System.out.println("ID do Pagamento: " + pagamento.getIdPagamento());
+        System.out.println("Data do Pagamento: " + pagamento.getDataPagamento());
+        System.out.println("Valor do Pagamento: " + pagamento.getValorPagamanto());
+        System.out.println("Número da Transação: " + pagamento.getNumeroTransacao());
+
+        if (pagamento instanceof Pix) {
+            Pix pix = (Pix) pagamento;
+            System.out.println("Chave Pix: " + pix.getChavePix());
+        } else if (pagamento instanceof ConvenioMedico) {
+            ConvenioMedico convenio = (ConvenioMedico) pagamento;
+            System.out.println("Número da Carteira: " + convenio.getNumeroCarteira());
+            System.out.println("Data de Vencimento: " + convenio.getDataVaencimento());
+        } else if (pagamento instanceof Cartao) {
+            Cartao cartao = (Cartao) pagamento;
+            System.out.println("Nome do Cartão: " + cartao.getNomeCartao());
+            System.out.println("Número do Cartão: " + cartao.getNumeroCartao());
+            System.out.println("CVV: " + cartao.getCvv());
+            System.out.println("Validade: " + cartao.getValidade());
+        }
+    }
+}
+

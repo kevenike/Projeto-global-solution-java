@@ -1,0 +1,77 @@
+package br.com.hapvida.forms;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import br.com.hapvida.beans.Cartao;
+import br.com.hapvida.beans.ConvenioMedico;
+import br.com.hapvida.beans.Pagamento;
+import br.com.hapvida.beans.Pix;
+
+public class PagamentoFormulario {
+  
+	public Pagamento exibirFormulario()}
+		private static Scanner scanner = new Scanner(System.in);
+		
+		
+		
+		 private static Pagamento criarPagamento() {
+		        System.out.println("Escolha o tipo de pagamento (1 - Pix, 2 - ConvenioMedico, 3 - Cartao): ");
+		        int opcaoPagamento = scanner.nextInt();
+
+		        switch (opcaoPagamento) {
+		            case 1:
+		                return criarPix();
+		            case 2:
+		                return criarConvenioMedico();
+		            case 3:
+		                return criarCartao();
+		            default:
+		                throw new IllegalArgumentException("Opção de pagamento inválida");
+		        }
+		    }
+		 
+		 private static Pix criarPix() {
+		        System.out.println("Digite o ID do pagamento: ");
+		        int idPagamento = scanner.nextInt();
+		        // ... (solicite outras informações específicas do Pix)
+		        return new Pix(idPagamento, LocalDate.now(), 0.0, 0, "chavePix");
+		    }
+		 
+		 private static ConvenioMedico criarConvenioMedico() {
+		        System.out.println("Digite o ID do pagamento: ");
+		        int idPagamento = scanner.nextInt();
+		        // ... (solicite outras informações específicas do ConvenioMedico)
+		        return new ConvenioMedico(idPagamento, LocalDate.now(), 0.0, 0, 123, LocalDate.now());
+		    }
+		 
+		 private static Cartao criarCartao() {
+		        System.out.println("Digite o ID do pagamento: ");
+		        int idPagamento = scanner.nextInt();
+		        // ... (solicite outras informações específicas do Cartao)
+		        return new Cartao(idPagamento, LocalDate.now(), 0.0, 0, "Nome", 123456789, 123, LocalDate.now());
+		    }
+		 
+		 private static void exibirDetalhesPagamento(Pagamento pagamento) {
+		        System.out.println("Detalhes do pagamento:");
+		        System.out.println("ID do Pagamento: " + pagamento.getIdPagamento());
+		        System.out.println("Data do Pagamento: " + pagamento.getDataPagamento());
+		        System.out.println("Valor do Pagamento: " + pagamento.getValorPagamanto());
+		        System.out.println("Número da Transação: " + pagamento.getNumeroTransacao());
+
+		        if (pagamento instanceof Pix) {
+		            Pix pix = (Pix) pagamento;
+		            System.out.println("Chave Pix: " + pix.getChavePix());
+		        } else if (pagamento instanceof ConvenioMedico) {
+		            ConvenioMedico convenio = (ConvenioMedico) pagamento;
+		            System.out.println("Número da Carteira: " + convenio.getNumeroCarteira());
+		            System.out.println("Data de Vencimento: " + convenio.getDataVaencimento());
+		        } else if (pagamento instanceof Cartao) {
+		            Cartao cartao = (Cartao) pagamento;
+		            System.out.println("Nome do Cartão: " + cartao.getNomeCartao());
+		            System.out.println("Número do Cartão: " + cartao.getNumeroCartao());
+		            System.out.println("CVV: " + cartao.getCvv());
+		            System.out.println("Validade: " + cartao.getValidade());
+		        }
+	}
+}

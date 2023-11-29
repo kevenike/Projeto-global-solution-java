@@ -1,0 +1,28 @@
+package br.com.hapvida.beans;
+
+import java.time.LocalDate;
+
+public class Cartao extends Pagamento {
+
+	private String nomeCartao;
+	private int numeroCartao;
+	private int cvv;
+	private LocalDate validade;
+	
+	public Cartao() {
+		super();
+	}
+
+	public Cartao(int idPagamento, double valorPagamanto, int numeroTransacao, String nomeCartao, int numeroCartao,
+			int cvv, LocalDate validade) {
+		super(idPagamento, valorPagamanto, numeroTransacao);
+		this.nomeCartao = nomeCartao;
+		this.numeroCartao = numeroCartao;
+		this.cvv = cvv;
+		this.validade = validade;
+	}
+	
+	
+	
+	
+}

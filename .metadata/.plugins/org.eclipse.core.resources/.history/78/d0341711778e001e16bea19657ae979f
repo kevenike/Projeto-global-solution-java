@@ -1,0 +1,46 @@
+package br.com.hapvida.beans;
+
+public class Pagamento {
+
+	private int idPagamento;
+	private double valorPagamanto;
+	private int numeroTransacao;
+	
+	public Pagamento() {
+		super();
+	}
+
+	public Pagamento(int idPagamento, double valorPagamanto, int numeroTransacao) {
+		super();
+		this.idPagamento = idPagamento;
+		this.valorPagamanto = valorPagamanto;
+		this.numeroTransacao = numeroTransacao;
+	}
+
+	public int getIdPagamento() {
+		return idPagamento;
+	}
+
+	public void setIdPagamento(int idPagamento) {
+		this.idPagamento = idPagamento;
+	}
+
+	public double getValorPagamanto() {
+		return valorPagamanto;
+	}
+
+	public void setValorPagamanto(double valorPagamanto) {
+		this.valorPagamanto = valorPagamanto;
+	}
+
+	public int getNumeroTransacao() {
+		return numeroTransacao;
+	}
+
+	public void setNumeroTransacao(int numeroTransacao) {
+		this.numeroTransacao = numeroTransacao;
+	}
+	
+	
+	
+}
