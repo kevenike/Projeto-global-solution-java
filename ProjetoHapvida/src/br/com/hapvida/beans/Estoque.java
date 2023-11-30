@@ -13,22 +13,7 @@ public class Estoque {
 	private int quantidadeEntrada;
 	private int quantidadeSaida;
 
-	public Estoque() {
-		super();
-	}
-
-	public Estoque(String fornecedorEstoque, String loteEstoque, String controleMedicacaoEstoque,
-			LocalDate dataEntradaEstoque, LocalDate dataSaidaEstoque, int quantidadeEntrada, int quantidadeSaida) {
-		super();
-		this.fornecedorEstoque = fornecedorEstoque;
-		this.loteEstoque = loteEstoque;
-		this.controleMedicacaoEstoque = controleMedicacaoEstoque;
-		this.dataEntradaEstoque = dataEntradaEstoque;
-		this.dataSaidaEstoque = dataSaidaEstoque;
-		this.quantidadeEntrada = quantidadeEntrada;
-		this.quantidadeSaida = quantidadeSaida;
-	}
-
+	
 	public String getFornecedorEstoque() {
 		return fornecedorEstoque;
 	}

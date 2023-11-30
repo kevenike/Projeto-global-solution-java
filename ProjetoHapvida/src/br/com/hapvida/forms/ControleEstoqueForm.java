@@ -11,7 +11,6 @@ public class ControleEstoqueForm {
 	public Estoque exibirFormulario() {
 		Scanner scanner = new Scanner(System.in);
 		
-		Estoque estoque = new Estoque();
 		
 		System.out.println("=== Controle de Estoque ===");
 
@@ -41,6 +40,7 @@ public class ControleEstoqueForm {
 		System.out.print("Quantidade de Saída: ");
 		int quantidadeSaida = scanner.nextInt();
 		
+		Estoque estoque = new Estoque();
 		
 		estoque.setFornecedorEstoque(fornecedor);
 		estoque.setLoteEstoque(lote);
