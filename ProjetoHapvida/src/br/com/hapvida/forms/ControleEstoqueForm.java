@@ -13,7 +13,7 @@ public class ControleEstoqueForm {
 		
 		Estoque estoque = new Estoque();
 		
-		System.out.println("=== Formulário de Controle de Estoque ===");
+		System.out.println("=== Controle de Estoque ===");
 
 		System.out.print("Fornecedor: ");
 		String fornecedor = scanner.next();

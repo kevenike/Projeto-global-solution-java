@@ -10,7 +10,7 @@ public class FarmaciaForm {
 		Scanner scanner = new Scanner(System.in);
 		Farmacia farmacia = new Farmacia();
 
-		System.out.println("====== Formulário Farmácia ======");
+		System.out.println("====== Farmácia ======");
 
 		System.out.print("Informe o ID do funcionário: ");
 		farmacia.setIdFuncionario(scanner.nextInt());

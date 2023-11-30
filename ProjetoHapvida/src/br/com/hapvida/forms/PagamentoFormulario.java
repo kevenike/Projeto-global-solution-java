@@ -40,7 +40,7 @@ public class PagamentoFormulario {
         String chavePix = scanner.next();
         System.out.println("Digite o Valor do Pagamento: ");
         double valorPagamento = scanner.nextDouble();
-        System.out.println("Digite o Número da Transação: ");
+        System.out.println("Número da Transação: ");
         int numeroTransacao = scanner.nextInt();
 
         Pix pix = new Pix(idPagamento, LocalDate.now(), valorPagamento, numeroTransacao, chavePix);
@@ -58,7 +58,7 @@ public class PagamentoFormulario {
         LocalDate dataVencimento = LocalDate.parse(dataVencimentoStr, dateFormatter);
         System.out.println("Digite o Valor do Pagamento: ");
         double valorPagamento = scanner.nextDouble();
-        System.out.println("Digite o Número da Transação: ");
+        System.out.println("Número da Transação: ");
         int numeroTransacao = scanner.nextInt();
 
         ConvenioMedico convenio = new ConvenioMedico(idPagamento, LocalDate.now(), valorPagamento, numeroTransacao, numeroCarteira, dataVencimento);
@@ -78,7 +78,7 @@ public class PagamentoFormulario {
         int cvv = scanner.nextInt();
         System.out.println("Digite o Valor do Pagamento: ");
         double valorPagamento = scanner.nextDouble();
-        System.out.println("Digite o Número da Transação: ");
+        System.out.println("Número da Transação: ");
         int numeroTransacao = scanner.nextInt();
         System.out.println("Digite a Validade do Cartão (no formato MM/yyyy): ");
         String validadeStr = scanner.next();
